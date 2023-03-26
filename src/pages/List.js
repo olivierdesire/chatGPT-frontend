@@ -21,7 +21,8 @@ const List = ({ baseUrl, token }) => {
       }
     };
     fetchData();
-  }, []);
+  }, [baseUrl, token]);
+
   return isLoading ? (
     <p>Downloading</p>
   ) : (
