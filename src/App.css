@@ -1,38 +1,181 @@
-.App {
-  text-align: center;
+/* GENGERAL */
+.home > img {
+  height: calc(100vh - 50px);
+  width: 100vw;
+  object-fit: cover;
+}
+.container {
+  max-width: 1024;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* HEADER */
+.header {
+  height: 50px;
+  margin-top: 10px;
+}
+.header-flex {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.header button {
+  border: none;
+  background-color: #329cb2;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.histo-deconnexion {
+  display: flex;
+  gap: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* SIGNUP/LOGIN */
+.form-connexion {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.button-form {
+  display: flex;
+  justify-content: center;
+}
+
+.button-link {
+  border: none;
+  background-color: #fff;
+}
+
+.button-form button {
+  border: none;
+  background-color: #339cb3;
+  color: white;
+  border-radius: 3px;
+  padding: 10px 40px;
+}
+
+.form-connexion input {
+  border: none;
+  border-bottom: 1px solid rgb(209, 205, 205);
+  margin-top: 20px;
+  outline: none;
+}
+.form-connexion p {
+  display: flex;
+  justify-content: center;
+}
+
+/* PAGE QUESTION */
+.page-question {
+  background-color: #329cb2;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-question {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.container-question > p {
+  color: white;
+  padding: 20px 0px;
+}
+
+.container-response {
+  max-height: 500px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 50px;
+  padding: 20px;
+}
+textarea {
+  border-radius: 10px;
+  outline: none;
+}
+
+.page-question button {
+  background-color: #fff;
+  border: none;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LISTE */
+
+.page-list {
+  padding: 20px 0px;
+  background-color: #329cb2;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container-list {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.list {
+  border-width: 5px;
+  border-style: double;
+  margin: 20px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.request,
+.response {
+  padding: 10px;
+}
+
+.trait {
+  border: 1px solid;
+}
+
+/* MODAL */
+.modal-root {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(200, 200, 200, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  height: 350px;
+  width: 300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.modal button {
+  align-self: flex-end;
+  margin: 20px;
+}
+
+@media (max-width: 473px) {
+  .App > img {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
   }
 }
