@@ -66,7 +66,9 @@ const Request = ({ baseUrl, token }) => {
           </div>
         </form>
       </div>
-      {response && <div className="container-response">{response}</div>}
+      <div className="head-response">
+        {response && <div className="container-response">{response}</div>}
+      </div>
     </div>
   );
 };
