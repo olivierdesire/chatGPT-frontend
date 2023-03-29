@@ -8,7 +8,7 @@ const List = ({ baseUrl, token }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`${baseUrl}/chat/request/list`, {
+        const { data } = await axios.get(`${baseUrl}/chat/request`, {
           headers: {
             authorization: "Bearer " + token,
           },
