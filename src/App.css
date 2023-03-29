@@ -73,9 +73,6 @@
   background-color: #329cb2;
   width: 100vw;
   height: 100vh;
-}
-
-.head-response {
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -91,7 +88,7 @@
 }
 
 .container-response {
-  max-height: 500px;
+  max-height: fit-content;
   max-width: 800px;
   margin: 0 auto;
   background-color: white;
