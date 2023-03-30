@@ -36,16 +36,18 @@ const Request = ({ baseUrl, token }) => {
       <div className="container-question">
         <p>Votre question</p>
         <form onSubmit={handleSubmit}>
-          <textarea
-            name="request"
-            id="question"
-            cols="50"
-            rows="10"
-            value={question}
-            onChange={(event) => {
-              setQuestion(event.target.value);
-            }}
-          ></textarea>
+          <div className="container-bloc">
+            <textarea
+              name="request"
+              id="question"
+              cols="50"
+              rows="10"
+              value={question}
+              onChange={(event) => {
+                setQuestion(event.target.value);
+              }}
+            ></textarea>
+          </div>
           <div className="buttons">
             {!isUpdating ? (
               <button>Soumettre</button>
@@ -66,7 +68,7 @@ const Request = ({ baseUrl, token }) => {
           </div>
         </form>
       </div>
-      {response && <div className="container-response">{response}</div>}
+      {response && <div className="container-bloc">{response}</div>}
     </div>
   );
 };
