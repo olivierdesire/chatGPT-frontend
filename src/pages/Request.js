@@ -41,7 +41,7 @@ const Request = ({ baseUrl, token }) => {
               name="request"
               id="question"
               cols="50"
-              rows="10"
+              rows="3"
               value={question}
               onChange={(event) => {
                 setQuestion(event.target.value);
