@@ -83,6 +83,7 @@ body {
   border: none;
   background-color: #fff;
   text-decoration: underline;
+  color: black;
 }
 
 .button-form button {
