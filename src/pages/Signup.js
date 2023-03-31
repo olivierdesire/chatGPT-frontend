@@ -40,6 +40,7 @@ const Signup = ({ baseUrl, setVisible, handleToken }) => {
 
   return (
     <div>
+      <h1>S'inscrire</h1>
       <form className="form-connexion" onSubmit={handleSubmit}>
         <input
           type="text"

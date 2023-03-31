@@ -34,6 +34,7 @@ const Login = ({ baseUrl, setVisible, handleToken }) => {
 
   return (
     <div>
+      <h1>Se connecter</h1>
       <form className="form-connexion" onSubmit={handleSubmit}>
         <input
           type="email"

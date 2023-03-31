@@ -56,15 +56,17 @@ const Header = ({ token, handleToken, setVisible, search, setSearch }) => {
               </div>
             </div>
           ) : (
-            <div className="header-row">
-              <button
-                onClick={() => {
-                  setVisible("login");
-                }}
-              >
-                Se connecter
-              </button>
-              <button onClick={() => setVisible("signup")}>S'inscrire</button>
+            <div className="header-max">
+              <div className="header-row">
+                <button
+                  onClick={() => {
+                    setVisible("login");
+                  }}
+                >
+                  Se connecter
+                </button>
+                <button onClick={() => setVisible("signup")}>S'inscrire</button>
+              </div>
             </div>
           )}
         </div>

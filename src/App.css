@@ -95,6 +95,12 @@ body {
   justify-content: center;
 }
 
+h1 {
+  text-align: center;
+  /* width: fit-content; */
+  box-shadow: 0 0 10px #333333;
+}
+
 /* PAGE QUESTION */
 .page-question {
   background-color: #329cb2;
