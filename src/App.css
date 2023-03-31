@@ -187,6 +187,12 @@ textarea {
   align-items: center;
 }
 
+.error-message {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: white;
+}
 /* LISTE */
 
 .page-list {

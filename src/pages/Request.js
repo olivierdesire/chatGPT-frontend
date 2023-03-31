@@ -9,28 +9,33 @@ const Request = ({ baseUrl, token }) => {
   const [response, setResponse] = useState("");
   const [isUpdating, setIsUpdating] = useState(false);
   const [tabResponse, setTabResponse] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsUpdating(true);
-    try {
-      const { data } = await axios.post(
-        `${baseUrl}/chat/request`,
-        {
-          request: question,
-        },
-        {
-          headers: {
-            Authorization: "Bearer " + token,
+    if (question) {
+      try {
+        const { data } = await axios.post(
+          `${baseUrl}/chat/request`,
+          {
+            request: question,
           },
-        }
-      );
-      //   console.log("data>>", data.response.content);
-      setResponse(data.response.content);
-      const tab = transformResponse(data.response.content);
-      setTabResponse(tab);
-    } catch (error) {
-      console.log(error);
+          {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          }
+        );
+        //   console.log("data>>", data.response.content);
+        setResponse(data.response.content);
+        const tab = transformResponse(data.response.content);
+        setTabResponse(tab);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      setErrorMessage("Vous devez poser une question avant de soumettre");
     }
     setIsUpdating(false);
   };
@@ -65,6 +70,7 @@ const Request = ({ baseUrl, token }) => {
               onClick={() => {
                 setQuestion("");
                 setResponse("");
+                setErrorMessage("");
               }}
             >
               Réinitialiser
@@ -72,6 +78,7 @@ const Request = ({ baseUrl, token }) => {
           </div>
         </form>
       </div>
+      <div className="error-message">{errorMessage}</div>
       {response && (
         <div className="container-bloc">
           {tabResponse.map((element, index) => {
