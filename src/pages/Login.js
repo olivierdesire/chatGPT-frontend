@@ -26,7 +26,9 @@ const Login = ({ baseUrl, setVisible, handleToken }) => {
         setErreur("Tous les champs sont obligatoires");
       }
     } catch (error) {
-      console.log(error);
+      if (error?.response.data.error.message) {
+        setErreur(error.response.data.error.message);
+      }
     }
   };
 

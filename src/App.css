@@ -1,4 +1,7 @@
 /* GENGERAL */
+body {
+  background-color: #329cb2;
+}
 .home > img {
   height: calc(100vh - 50px);
   width: 100vw;
@@ -11,13 +14,15 @@
 
 /* HEADER */
 .header {
-  height: 50px;
-  margin-top: 10px;
+  background-color: white;
+  height: fit-content;
+  /* margin-top: 10px; */
 }
 .header-flex {
   display: flex;
   justify-content: center;
   gap: 30px;
+  margin-bottom: 10px;
 }
 .header button {
   border: none;
@@ -27,9 +32,18 @@
   padding: 10px;
 }
 
-.histo-deconnexion {
+.header-row {
   display: flex;
+  justify-content: space-between;
   gap: 30px;
+  margin: 10px 0px;
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: beige;
 }
 
 /* SIGNUP/LOGIN */
@@ -143,6 +157,7 @@ textarea {
   border-width: 5px;
   border-style: double;
   margin: 20px auto;
+  text-align: justify;
 }
 
 .request,

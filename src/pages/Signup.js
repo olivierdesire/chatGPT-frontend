@@ -26,13 +26,15 @@ const Signup = ({ baseUrl, setVisible, handleToken }) => {
           setVisible(null);
           navigate(location.pathname);
         } else {
-          setErreur("Mots de passe différents");
+          setErreur("Passwords must be the same");
         }
       } else {
-        setErreur("Tous les champs sont obligatoires");
+        setErreur("All fields required");
       }
     } catch (error) {
-      console.log(error);
+      if (error?.response.data.error.message) {
+        setErreur(error.response.data.error.message);
+      }
     }
   };
 

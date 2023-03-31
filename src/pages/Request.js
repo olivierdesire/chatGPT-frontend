@@ -2,11 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 import { Dots } from "react-activity";
 import "react-activity/dist/library.css";
+import transformResponse from "../function/transformResponse";
 
 const Request = ({ baseUrl, token }) => {
   const [question, setQuestion] = useState("");
   const [response, setResponse] = useState("");
   const [isUpdating, setIsUpdating] = useState(false);
+  const [tabResponse, setTabResponse] = useState([]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +27,8 @@ const Request = ({ baseUrl, token }) => {
       );
       //   console.log("data>>", data.response.content);
       setResponse(data.response.content);
+      const tab = transformResponse(data.response.content);
+      setTabResponse(tab);
     } catch (error) {
       console.log(error);
     }
@@ -68,7 +72,13 @@ const Request = ({ baseUrl, token }) => {
           </div>
         </form>
       </div>
-      {response && <div className="container-bloc">{response}</div>}
+      {response && (
+        <div className="container-bloc">
+          {tabResponse.map((element, index) => {
+            return <p key={index}>{element}</p>;
+          })}
+        </div>
+      )}
     </div>
   );
 };

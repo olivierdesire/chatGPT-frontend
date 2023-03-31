@@ -11,6 +11,7 @@ import List from "./pages/List";
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [visible, setVisible] = useState(null);
+  const [search, setSearch] = useState(null);
 
   const baseUrl = "https://site--backends--97yqlpf4l44b.code.run";
   // const baseUrl = "http://localhost:3001";
@@ -31,6 +32,8 @@ function App() {
         handleToken={handleToken}
         visible={visible}
         setVisible={setVisible}
+        search={search}
+        setSearch={setSearch}
       />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -40,7 +43,7 @@ function App() {
         />
         <Route
           path="/list"
-          element={<List baseUrl={baseUrl} token={token} />}
+          element={<List baseUrl={baseUrl} token={token} search={search} />}
         />
       </Routes>
       {visible && (

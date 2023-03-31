@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import transformResponse from "../function/transformResponse";
 
-const List = ({ baseUrl, token }) => {
+const List = ({ baseUrl, token, search }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`${baseUrl}/chat/request`, {
+        let filter = "";
+        if (search) {
+          filter = "?search=" + search;
+        }
+        const { data } = await axios.get(`${baseUrl}/chat/request${filter}`, {
           headers: {
             authorization: "Bearer " + token,
           },
         });
-        console.log(data);
         setData(data);
         setIsLoading(false);
       } catch (error) {
@@ -21,7 +25,7 @@ const List = ({ baseUrl, token }) => {
       }
     };
     fetchData();
-  }, [baseUrl, token]);
+  }, [baseUrl, token, search]);
 
   return isLoading ? (
     <p>Downloading</p>
@@ -32,7 +36,14 @@ const List = ({ baseUrl, token }) => {
           <div key={element._id} className="list container-list">
             <div className="request">{element.request}</div>
             <div className="trait"></div>
-            <div className="response">{element.response}</div>
+
+            {transformResponse(element.response).map((e2, i2) => {
+              return (
+                <p key={i2} className="response">
+                  {e2}
+                </p>
+              );
+            })}
           </div>
         );
       })}
