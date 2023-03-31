@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import imgChatGPT from "../assets/img/chatGPT.jpg";
 
 const Header = ({ token, handleToken, setVisible, search, setSearch }) => {
   const navigate = useNavigate();
@@ -7,7 +8,7 @@ const Header = ({ token, handleToken, setVisible, search, setSearch }) => {
       <div className="container">
         <div className="header-flex">
           {token ? (
-            <div>
+            <div className="header-max">
               <div className="header-row">
                 <button
                   onClick={() => {
@@ -29,6 +30,11 @@ const Header = ({ token, handleToken, setVisible, search, setSearch }) => {
                   Se déconnecter
                 </button>
               </div>
+              <img
+                className="header-img hidden"
+                src={imgChatGPT}
+                alt="logo chatGPT"
+              />
               <div className="header-row">
                 <button
                   onClick={() => {
