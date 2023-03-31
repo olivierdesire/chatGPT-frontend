@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 .header button {
   border: none;
@@ -35,15 +35,22 @@ body {
 .header-row {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 20px;
   margin: 10px 0px;
 }
 .input {
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   outline: none;
   border: none;
-  background-color: beige;
+  background-color: #329cb2;
+  color: white;
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: white;
+  text-align: center;
 }
 
 /* SIGNUP/LOGIN */

@@ -41,6 +41,7 @@ const Header = ({ token, handleToken, setVisible, search, setSearch }) => {
                   className="input"
                   type="text"
                   name="search"
+                  placeholder="Saisir votre recherche"
                   value={search}
                   onChange={(event) => {
                     setSearch(event.target.value);
