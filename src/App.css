@@ -63,7 +63,7 @@ body {
 }
 
 ::placeholder {
-  color: white;
+  color: rgb(189, 185, 185);
   text-align: center;
 }
 
